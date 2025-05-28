@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>내 사랑 쭈의 스케치</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Cute+Font&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>내 사랑 쭈의 스케치</h1>
+  </header>
+
+  <section class="menu">
+    <!-- 색상 선택 -->
+    <div class="color-picker">
+      <label>색상 선택</label>
+      <div id="customColorPicker"></div>
+    </div>
+
+    <!-- 펜 종류 선택 -->
+    <div class="pen-selector">
+      <label>펜 종류</label>
+      <select id="penSelect">
+        <option value="pen">일반 펜</option>
+        <option value="marker">마커</option>
+        <option value="airbrush">에어브러쉬</option>
+        <option value="watercolor">수채화</option>
+        <option value="brushpen">붓펜</option>
+        <option value="pencil">연필</option>
+        <option value="highlighter">형광펜</option>
+        <option value="spray">스프레이</option>
+        <option value="eraser">지우개</option>
+        <option value="text">텍스트 펜</option>
+      </select>
+    </div>
+
+    <!-- 레이어 제어 -->
+    <div class="layer-controls">
+      <button onclick="addLayer()">레이어 추가</button>
+      <button onclick="removeLayer()">레이어 삭제</button>
+      <ul id="layerList"></ul>
+    </div>
+
+    <!-- 배경 업로드 -->
+    <div class="background-uploader">
+      <label for="bgUpload">배경 이미지 불러오기</label>
+      <input type="file" id="bgUpload" accept="image/*" />
+    </div>
+
+    <!-- 텍스트 삽입 -->
+    <div class="text-inserter">
+      <input type="text" id="textInput" placeholder="텍스트를 입력하세요" />
+      <button onclick="activateTextMode()">텍스트 삽입</button>
+    </div>
+
+    <!-- 확대/축소 -->
+    <div class="zoom-controls">
+      <button onclick="zoomCanvas(1.2)">확대</button>
+      <button onclick="zoomCanvas(0.8)">축소</button>
+    </div>
+
+    <!-- 저장 -->
+    <div class="save-button">
+      <button onclick="downloadImage()">저장하기</button>
+    </div>
+  </section>
+
+  <!-- 캔버스 영역 -->
+  <section class="canvas-container" id="canvasContainer">
+    <!-- Canvas 동적 생성 -->
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
